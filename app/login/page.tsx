@@ -90,7 +90,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@praxis.com"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
@@ -101,7 +101,7 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="demo123"
+                  placeholder="Enter your password"
                   required
                 />
               </div>
