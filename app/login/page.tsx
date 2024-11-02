@@ -14,9 +14,9 @@ import { useToast } from '@/components/ui/use-toast';
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState('admin@praxis.com');
-  const [password, setPassword] = useState('demo123');
-  const [companyId, setCompanyId] = useState('1');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [companyId, setCompanyId] = useState('');
   const router = useRouter();
   const login = useAuth((state) => state.login);
   const { toast } = useToast();
