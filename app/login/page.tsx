@@ -39,7 +39,7 @@ export default function LoginPage() {
       } else {
         toast({
           title: "Login failed",
-          description: "Invalid credentials. Try admin@praxis.com / demo123",
+          description: "Invalid credentials.",
           variant: "destructive",
         });
         setIsLoading(false);
