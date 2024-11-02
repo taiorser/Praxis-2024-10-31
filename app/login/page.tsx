@@ -79,7 +79,7 @@ export default function LoginPage() {
                   id="company"
                   value={companyId}
                   onChange={(e) => setCompanyId(e.target.value)}
-                  placeholder="Enter your company ID"
+                  placeholder="Enter your company ID."
                   required
                 />
               </div>
@@ -90,7 +90,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder="Enter your email."
                   required
                 />
               </div>
@@ -101,7 +101,7 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password"
+                  placeholder="Enter your password."
                   required
                 />
               </div>
