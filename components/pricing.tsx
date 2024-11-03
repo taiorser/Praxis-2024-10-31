@@ -38,11 +38,10 @@ const features = {
     'Scalable employee count',
     'Customizable Leaderboards, Achievements, and Training',
     'Customizable Rewards Marketplace',
-    'Customizable Training Gamification',
     'Scalable admin accounts, manager accounts, and locations',
     'Dedicated success manager',
     'Multi-exportable analytics dashboard',
-    'Customizable SLA',
+    'Completely private label',
   ],
 };
 
