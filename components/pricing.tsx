@@ -16,47 +16,59 @@ import {
 const features = {
   starter: [
     'Up to 50 employees',
-    'Basic recognition tools',
-    'Standard leaderboards',
-    'Email support',
-    'Basic analytics',
+    'Single location access',
+    'Customizable Leaderboards, Achievements, and Training',
+    'Customizable Rewards Marketplace',
+    'Up to 1 admin account',
+    'Up to 3 manager accounts',
+    'Standard analytics dashboard',
+    'Praxis branding',
   ],
   growth: [
     'Up to 200 employees',
-    'Advanced recognition system',
-    'Custom rewards marketplace',
-    'Priority support',
-    'Advanced analytics',
-    'API access',
-    'Custom integrations',
+    'Customizable Leaderboards, Achievements, and Training',
+    'Customizable Rewards Marketplace',
+    'Up to 3 locations',
+    'Up to 3 admins accounts',
+    'Up to 5 manager accounts',
+    'PDF Exportable advanced analytics dashboard',
+    'Custom brand colors with Praxis branding',
   ],
   enterprise: [
-    'Unlimited employees',
-    'White-label solution',
-    'Custom gamification',
+    'Scalable employee count',
+    'Customizable Leaderboards, Achievements, and Training',
+    'Customizable Rewards Marketplace',
+    'Scalable admin accounts, manager accounts, and locations',
     'Dedicated success manager',
-    'Enterprise SSO',
-    'Advanced security',
-    'Custom contracts',
-    'SLA guarantees',
+    'Multi-exportable analytics dashboard',
+    'Completely private label',
   ],
 };
 
 export function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
 
+  // Monthly prices
+  const monthlyPrices = {
+    starter: 6.99,
+    growth: 5.99,
+  };
+
+  // Dynamically calculated annual prices (12x the monthly price)
   const plans = [
     {
       name: 'Starter',
       description: 'Perfect for small teams getting started with employee recognition',
-      price: isAnnual ? 99 : 12,
+      monthlyPrice: monthlyPrices.starter,
+      annualPrice: monthlyPrices.starter * 12,
       features: features.starter,
       badge: '',
     },
     {
       name: 'Growth',
       description: 'Ideal for growing companies focused on culture and engagement',
-      price: isAnnual ? 299 : 29,
+      monthlyPrice: monthlyPrices.growth,
+      annualPrice: monthlyPrices.growth * 12,
       features: features.growth,
       badge: 'Most Popular',
     },
@@ -90,9 +102,6 @@ export function Pricing() {
             />
             <span className={isAnnual ? 'text-primary' : 'text-muted-foreground'}>
               Annual
-              <Badge variant="secondary" className="ml-2">
-                Save 20%
-              </Badge>
             </span>
           </div>
         </div>
@@ -113,15 +122,27 @@ export function Pricing() {
                 <p className="text-muted-foreground">{plan.description}</p>
               </div>
               <div className="mb-8">
-                {typeof plan.price === 'number' ? (
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-bold">${plan.price}</span>
-                    <span className="text-muted-foreground ml-2">
-                      /{isAnnual ? 'year' : 'month'}
+                {plan.price === 'Custom' ? (
+                  <div className="text-4xl font-bold">{plan.price}</div>
+                ) : (
+                  <div className="flex flex-col items-start">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-bold">
+                        ${isAnnual ? plan.annualPrice.toFixed(2) : plan.monthlyPrice.toFixed(2)}
+                      </span>
+                      <span className="text-muted-foreground ml-2">
+                        per employee / {isAnnual ? 'year' : 'month'}
+                      </span>
+                    </div>
+                    <span className="text-sm text-muted-foreground">
+                      (~$
+                      {(
+                        (isAnnual ? plan.annualPrice : plan.monthlyPrice) /
+                        (isAnnual ? 2087 : 160)
+                      ).toFixed(2)}{' '}
+                      per full-time hour)
                     </span>
                   </div>
-                ) : (
-                  <div className="text-4xl font-bold">{plan.price}</div>
                 )}
               </div>
               <ul className="space-y-4 mb-8">
