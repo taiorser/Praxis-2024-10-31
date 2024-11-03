@@ -81,6 +81,7 @@ export default function LoginPage() {
                   onChange={(e) => setCompanyId(e.target.value)}
                   placeholder="Enter your company ID."
                   required
+                  autoComplete="off"
                 />
               </div>
               <div className="space-y-2">
@@ -92,6 +93,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email."
                   required
+                  autoComplete="off"
                 />
               </div>
               <div className="space-y-2">
@@ -103,6 +105,7 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password."
                   required
+                  autoComplete="off"
                 />
               </div>
             </CardContent>
