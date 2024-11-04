@@ -1,0 +1,18 @@
+export const pricingPlans = {
+  starter: {
+    monthly: 12.99,
+    get annual() {
+      return this.monthly * 12;
+    },
+  },
+  growth: {
+    monthly: 14.99,
+    get annual() {
+      return this.monthly * 12;
+    },
+  },
+  enterprise: {
+    monthly: 'Custom',
+    annual: 'Custom',
+  },
+};

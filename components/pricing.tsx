@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { pricingPlans } from '@/components/pricingConfig'; // Import pricing plans
 
 const features = {
   starter: [
@@ -46,29 +47,22 @@ const features = {
 };
 
 export function Pricing() {
-  const [isAnnual, setIsAnnual] = useState(true);
+  const [isAnnual, setIsAnnual] = useState(false);
 
-  // Monthly prices
-  const monthlyPrices = {
-    starter: 6.99,
-    growth: 5.99,
-  };
-
-  // Dynamically calculated annual prices (12x the monthly price)
   const plans = [
     {
       name: 'Starter',
       description: 'Perfect for small teams getting started with employee recognition',
-      monthlyPrice: monthlyPrices.starter,
-      annualPrice: monthlyPrices.starter * 12,
+      monthlyPrice: pricingPlans.starter.monthly,
+      annualPrice: pricingPlans.starter.annual,
       features: features.starter,
       badge: '',
     },
     {
       name: 'Growth',
       description: 'Ideal for growing companies focused on culture and engagement',
-      monthlyPrice: monthlyPrices.growth,
-      annualPrice: monthlyPrices.growth * 12,
+      monthlyPrice: pricingPlans.growth.monthly,
+      annualPrice: pricingPlans.growth.annual,
       features: features.growth,
       badge: 'Most Popular',
     },
