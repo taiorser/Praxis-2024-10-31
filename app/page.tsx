@@ -3,7 +3,6 @@ import { Features } from '@/components/features';
 import { Pricing } from '@/components/pricing';
 import { Testimonials } from '@/components/testimonials';
 import { Contact } from '@/components/contact';
-import { Calculator } from '@/components/calculator';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
@@ -16,7 +15,6 @@ export default function Home() {
         <Features />
         <Pricing />
         <Testimonials />
-        <Calculator />
         <Contact />
       </main>
       <Footer />
